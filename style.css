@@ -49,4 +49,25 @@ a {
   font-weight: 500;
 }
 
+#qr-code {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #414866;
+}
+
+#qr-code img, #qr-code canvas {
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
 
