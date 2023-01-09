@@ -39,7 +39,7 @@ function handleQRText(e) {
 
 async function generateQRCode() {
   qrContainer.innerHTML = "";
-  new generateQRCode("qr-code", {
+  new QRCode("qr-code", {
     text,
     height: size,
     width: size,
@@ -57,6 +57,10 @@ async function handleShare() {
       const file = new File([blob], "QRCode.png", {
         type: blob.type,
       });
+      await navigator.share({
+        files: [file],
+        title: text,
+      });
 
     } catch (error) {
       alert("Your browser doesn't support sharing.");
@@ -73,6 +77,7 @@ function resolveDataUrl() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const img = document.querySelector("#qr-code img");
+
       if (img.currentSrc) {
         resolve(img.currentSrc);
         return;
