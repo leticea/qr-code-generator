@@ -20,15 +20,31 @@ let colorLight = "#fff",
 
 function handleDarkColor(e) {
   colorDark = e.target.value;
-  generateQRCode;
+  generateQRCode();
 }
 
 function handleLightColor(e) {
   colorLight = e.target.value;
-  generateQRCode;
+  generateQRCode();
 }
 
 function handleQRText(e) {
   const value = e.target.value;
-  
+  text = value;
+  if (!value) {
+    text = defaultUrl;
+  }
+  generateQRCode();
+}
+
+async function generateQRCode() {
+  qrContainer.innerHTML = "";
+  new generateQRCode("qr-code", {
+    text,
+    height: size,
+    width: size,
+    colorLight,
+    colorDark,
+  });
+  download.href = await resolveDataUrl();
 }
