@@ -77,7 +77,6 @@ function resolveDataUrl() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const img = document.querySelector("#qr-code img");
-
       if (img.currentSrc) {
         resolve(img.currentSrc);
         return;
