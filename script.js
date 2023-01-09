@@ -48,3 +48,18 @@ async function generateQRCode() {
   });
   download.href = await resolveDataUrl();
 }
+
+async function handleShare() {
+  setTimeout(async () => {
+    try {
+      const base64url = await resolveDataUrl();
+      const blob = await (await fetch(base64url)).blob();
+      const file = new File([blob], "QRCode.png", {
+        type: blob.type,
+      });
+
+    } catch (error) {
+      alert("Your browser doesn't support sharing.");
+    }
+  }, 100);
+}
