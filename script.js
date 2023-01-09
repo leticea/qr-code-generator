@@ -11,3 +11,9 @@ light.addEventListener("input", handleLightColor);
 qrText.addEventListener("input", handleQRText);
 sizes.addEventListener("change", handleSize);
 shareBtn.addEventListener("click", handleShare);
+
+const defaultUrl = "https://github.com/leticea";
+let colorLight = "#fff",
+    colorDark = "#000",
+    text = defaultUrl,
+    size = 300;
