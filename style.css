@@ -95,6 +95,25 @@ a {
   flex: 1;
 }
 
+.btn img {
+  width: 20px;
+  margin-left: 10px;
+}
 
+.share-btn {
+  margin-left: 0.7rem;
+}
+
+.action-container {
+  display: flex;
+  margin: 1rem 0;
+}
+
+@media (max-width: 512px) {
+  body {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
 
 
