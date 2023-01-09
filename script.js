@@ -53,7 +53,7 @@ async function handleShare() {
   setTimeout(async () => {
     try {
       const base64url = await resolveDataUrl();
-      const blob = await (await fetch(base64url)).blob();
+      const blob = await (await fetch(base64url)).blob(); // Um objeto Blob representa um objeto do tipo arquivo, com dados brutos imutáveis.
       const file = new File([blob], "QRCode.png", {
         type: blob.type,
       });
@@ -63,3 +63,23 @@ async function handleShare() {
     }
   }, 100);
 }
+
+function handleSize(e) {
+  size = e.target.value;
+  generateQRCode();
+}
+
+function resolveDataUrl() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const img = document.querySelector("#qr-code img");
+      if (img.currentSrc) {
+        resolve(img.currentSrc);
+        return;
+      }
+      const canvas = document.querySelector("canvas");
+      resolve(canvas.toDataURL());
+    }, 50);
+  });
+}
+generateQRCode();
