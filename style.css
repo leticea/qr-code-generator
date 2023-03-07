@@ -59,7 +59,8 @@ a {
   border: 1px solid #414866;
 }
 
-#qr-code img, #qr-code canvas {
+#qr-code img,
+#qr-code canvas {
   max-width: 100% !important;
   max-height: 100% !important;
 }
@@ -119,7 +120,8 @@ a {
     width: 95vw;
     height: 95vw;
   }
-  #qr-code img, #qr-code canvas {
+  #qr-code img,
+  #qr-code canvas {
     max-width: 95vw !important;
     max-height: 95vw !important;
   }

@@ -14,9 +14,9 @@ shareBtn.addEventListener("click", handleShare);
 
 const defaultUrl = "https://github.com/leticea";
 let colorLight = "#fff",
-    colorDark = "#000",
-    text = defaultUrl,
-    size = 300;
+  colorDark = "#000",
+  text = defaultUrl,
+  size = 300;
 
 function handleDarkColor(e) {
   colorDark = e.target.value;
@@ -61,7 +61,6 @@ async function handleShare() {
         files: [file],
         title: text,
       });
-
     } catch (error) {
       alert("Your browser doesn't support sharing.");
     }
